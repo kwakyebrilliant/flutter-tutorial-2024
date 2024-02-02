@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Hello World App'),
+          title: const Text('Hello World App'),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Hello Wolrd!'),
         ),
       ),
