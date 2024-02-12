@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp(
+    firstText: 'First Text',
+    secontText: 'Second Text',
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.firstText, required this.secontText});
+
+  final String firstText;
+  final String secontText;
 
   // This widget is the root of your application.
   @override
@@ -22,7 +28,22 @@ class MyApp extends StatelessWidget {
               child: Container(
                 height: 170.0,
                 width: 320.0,
-                color: Colors.blue,
+                decoration: BoxDecoration(
+                  color: Colors.lightBlue,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Top Container',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
               ),
             ),
 
@@ -37,6 +58,7 @@ class MyApp extends StatelessWidget {
                     height: 50.0,
                     width: 140.0,
                     color: Colors.blue,
+                    child: Text(firstText),
                   ),
 
                   //second container
@@ -44,6 +66,7 @@ class MyApp extends StatelessWidget {
                     height: 50.0,
                     width: 140.0,
                     color: Colors.blue,
+                    child: Text(secontText),
                   ),
                 ],
               ),
